@@ -1,12 +1,17 @@
-import sympy as sp
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import odeint
 
-# 定义符号变量
-x = sp.symbols('h')
+#定义函数
+def func(y, t):
+    return np.array(y)
 
-# 定义等式
-equation = (pou*g*(1/3*Pi*math.pow(r,3)+Pi *math.pow(r,3)(h-hs)))/((mo + mi)*g)
 
-# 求解
-solutions = sp.solve(equation, x)
-
-print("求解得到的变量值:", solutions)
+t = np.linspace(0, 10, 100)
+tt = np.linspace(5, 15, 100)
+result = odeint(func, y0=1, t=tt)
+y_real = np.exp(t)
+plt.plot(t, result[:, 0], label='odient', marker='*')
+plt.plot(t, y_real, label='real')
+plt.legend()
+plt.show()
