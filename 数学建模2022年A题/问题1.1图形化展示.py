@@ -33,3 +33,4 @@ axes[1].grid(True)
 # Show the plots
 plt.tight_layout()
 plt.show()
+plt.savefig('path+输出图片.svg',format='svg',dpi=150)
